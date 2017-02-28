@@ -30,6 +30,7 @@ Mount NTFS disk when hibernated in read-only mode:
 sudo mount -o ro /dev/sda2 /mnt
 
 *****
+
 Open current directory in GUI from terminal:
 xdg-open .
 
@@ -99,5 +100,31 @@ curl http://repo.vivaldi.com/stable/linux_signing_key.pub | sudo apt-key add -
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551
 sudo apt-get update
 sudo apt-get install vivaldi-stable
+
+*****
+
+Install Brackets.io web dev editor
+sudo add-apt-repository ppa:webupd8team/brackets
+sudo apt-get update
+sudo apt-get install brackets
+
+*****
+
+Scheduling a shutdown
+
+sudo shutdown -P +60
+That will wait 60 mins before starting the shutdown sequence.
+
+sudo shutdown -P 1:00
+to shutdown at 1 AM
+
+sudo shutdown -P now
+to shutdown now
+
+A message is broadcast to all terminals to warn about the shutdown.
+
+Cancel a pending shutdown
+sudo shutdown -c
+to cancel the scheduled shutdown.
 
 *****
