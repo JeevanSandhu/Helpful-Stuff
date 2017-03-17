@@ -1,4 +1,4 @@
-# Few Usefull Things in UBUNTU 16.04
+# Few Usefull Things to Help SetUp UBUNTU 16.04
 
 ### Rename the PC
 ```
