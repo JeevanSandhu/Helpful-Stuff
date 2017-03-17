@@ -1,35 +1,19 @@
-                        # Few Usefull Things in UBUNTU 16.04
+# Few Usefull Things in UBUNTU 16.04
 
-### Development
-    
-Want to contribute? Great!
-
-Dillinger uses Gulp + Webpack for fast developing.
-Make a change in your file and instantanously see your updates!
-
-Open your favorite Terminal and run these commands.
-
-First Tab:
-```sh
-$ sudo gedit /usr/share/X11/xorg.conf.d/20-intel.conf
+### Rename the PC
 ```
-
-
-
-#### Rename the PC:
-```sh
 $ sudo gedit /etc/hostname /etc/hosts
 ```
 Change the names in both the files and save. Restart immediately to reflect changes.
 
 
-#### Fix display brightness button:
-```sh
+### Fix display brightness button
+```
 $ sudo touch /usr/share/X11/xorg.conf.d/20-intel.conf
 $ sudo gedit /usr/share/X11/xorg.conf.d/20-intel.conf
 ```
 Add the following lines to this file:
-```sh
+```
 Section "Device"
         Identifier  "card0"
         Driver      "intel"
@@ -38,108 +22,123 @@ Section "Device"
 EndSection
 ```
 
-#### Restart Wifi:
-```sh
-sudo service network-manager restart
+
+### Restart Wifi
+```
+$ sudo service network-manager restart
 ```
 
-#### Mount NTFS disk when hibernated in read-only mode:
-```sh
-sudo mount -o ro /dev/sda2 /mnt
+
+### Mount NTFS disk when Windows has hibernated in read-only mode
+```
+$ sudo mount -o ro /dev/sda2 /mnt
 ```
 
-#### Open current directory in GUI from terminal:
-```sh
-xdg-open .
+
+### Open current directory in GUI from terminal
+```
+$ xdg-open .
 ```
 
-#### Open any file as if you had double clicked it in GUI from terminal
-```sh
-xdg-open filename
+
+### Open any file as if you had double clicked it in GUI from terminal
+```
+$ xdg-open filename
 ```
 
-#### Create launchers on the Desktop
-```sh
-sudo apt install gnome-panel
-gnome-desktop-item-edit --create-new ~/Desktop
+
+### Create launchers on the Desktop
+```
+$ sudo apt install gnome-panel
+$ gnome-desktop-item-edit --create-new ~/Desktop
 ```
 
-#### CTRL+ALT+DEL
-```sh
-add custom keyboard shortcut: gnome-system-monitor
+
+### CTRL+ALT+DEL
+Add custom keyboard shortcut: `gnome-system-monitor`
+
+
+### Sticky Notes
+```
+$ sudo apt install xpad
 ```
 
-#### Sticky Notes
-```sh
-sudo apt install xpad
+
+### Offline Documentation Browser
+```
+$ sudo apt-get install zeal
 ```
 
-#### Offline Documentation Browser
-```sh
-sudo apt-get install zeal
+
+### Snipping tool on Ubuntu
+```
+$ sudo add-apt-repository ppa:shutter/ppa
+$ sudo apt-get update
+$ sudo apt-get install shutter
 ```
 
-#### Snipping tool on Ubuntu
-```sh
-sudo add-apt-repository ppa:shutter/ppa
-sudo apt-get update
-sudo apt-get install shutter
-```
 
-#### Install Skype
-```sh
+### Install Skype
 Canonical Partners should be enabled
-sudo apt install skype
+```
+$ sudo apt install skype
 ```
 
-#### Enable ‘Minimise on Click’
-```sh
-gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
+
+### Enable ‘Minimise on Click’
+```
+$ gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-minimize-window true
 ```
 
-#### Move The Unity Launcher:
-```sh
-gsettings set com.canonical.Unity.Launcher launcher-position Bottom
+
+### Move The Unity Launcher
+```
+$ gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 ```
 
-#### WiFi constantly disconnects:
+
+### Fix 'WiFi constantly disconnects' problem
 Make sure that power management is turned off
-```sh
-iwconfig
+```
+$ iwconfig
 ```
 This should display a line with Power Management: Off. If it says On, you have to run:
-```sh
-sudo iwconfig wlan0 power off
+```
+$ sudo iwconfig wlan0 power off
 ```
 
-#### nstall Vivaldi web browser:
-```sh
-echo "echo deb http://repo.vivaldi.com/stable/deb/ stable main > /etc/apt/sources.list.d/vivaldi.list" | sudo sh
-curl http://repo.vivaldi.com/stable/linux_signing_key.pub | sudo apt-key add -
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551
-sudo apt-get update
-sudo apt-get install vivaldi-stable
+
+### Install Vivaldi web browser
+```
+$ echo "echo deb http://repo.vivaldi.com/stable/deb/ stable main > /etc/apt/sources.list.d/vivaldi.list" | sudo sh
+$ curl http://repo.vivaldi.com/stable/linux_signing_key.pub | sudo apt-key add - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 1397BC53640DB551
+$ sudo apt-get update
+$ sudo apt-get install vivaldi-stable
 ```
 
-#### Install Brackets.io web dev editor
-```sh
-sudo add-apt-repository ppa:webupd8team/brackets
-sudo apt-get update
-sudo apt-get install brackets
+
+### Install Brackets.io web dev editor
+```
+$ sudo add-apt-repository ppa:webupd8team/brackets
+$ sudo apt-get update
+$ sudo apt-get install brackets
 ```
 
-#### Scheduling a shutdown
 
-sudo shutdown -P +60
-That will wait 60 mins before starting the shutdown sequence.
-
-sudo shutdown -P 1:00
-to shutdown at 1 AM
-
-to shutdown now
-sudo shutdown -P now
-
+### Scheduling a shutdown
+Wait 60 mins before starting the shutdown sequence
+```
+$ sudo shutdown -P +60
+```
+To shutdown at 1 AM
+```
+$ sudo shutdown -P 1:00
+```
+To shutdown now
+```
+$ sudo shutdown -P now
+```
 Cancel a pending shutdown
-```sh
-sudo shutdown -c
+```
+$ sudo shutdown -c
 ```
