@@ -142,3 +142,10 @@ Cancel a pending shutdown
 ```
 $ sudo shutdown -c
 ```
+
+
+### Install .deb package through Terminal
+```
+$ sudo dpkg -i filename.deb
+```
+If dpkg reports an error due to dependency problems, you can run `sudo apt-get install -f` to download the missing dependencies and configure everything.
