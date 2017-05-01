@@ -149,3 +149,14 @@ $ sudo shutdown -c
 $ sudo dpkg -i filename.deb
 ```
 If dpkg reports an error due to dependency problems, you can run `sudo apt-get install -f` to download the missing dependencies and configure everything.
+
+
+### To fix the UTC / local time difference between Ubuntu and Windows from Ubuntu
+```
+$ timedatectl set-local-rtc 1
+```
+You can then check if Ubuntu uses local time, you can then use the following command:
+```
+$ timedatectl
+```
+Which should display: "RTC in local TZ: yes"
