@@ -164,3 +164,17 @@ sudo add-apt-repository ppa:danielrichter2007/grub-customizer
 sudo apt-get update
 sudo apt-get install grub-customizer
 ```
+
+### Add Aliases to Terminal
+```
+nano ~/.bashrc
+```
+Add the following to the File:
+```
+alias python='/usr/bin/python3'
+```
+Save it and exit
+To load the alias file in the current terminal type the following, else the new alias file will load when you open a new terminal
+```
+source ~/.bashrc
+```
